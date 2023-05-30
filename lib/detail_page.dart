@@ -45,15 +45,18 @@ class DetailPage extends StatelessWidget {
               "${description}",
               textAlign: TextAlign.justify,
             ),
-            TextButton(
-              onPressed: () async {
-                await urlLaunch("${link}");
-              },
-              child: Text("Baca Selengkapnya...",
-                  style: TextStyle(
-                    color: Colors.teal,
+            Container(
+              height: MediaQuery.of(context).size.height / 3,
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
+                  onPressed: () async {
+                    await urlLaunch("${link}");
+                  },
+                  child: const Text(
+                    "Baca Selengkapnya...",
+                    textAlign: TextAlign.center,
                   )),
-            ),
+            )
           ],
         ),
       ),
